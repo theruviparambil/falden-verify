@@ -50,10 +50,10 @@ The signature is expected at `pack.json.sig` unless you pass `-sig`. On success:
 ```
 OK
   pack             pack.json
-  digest           7b3a6d5960daf8500b7bbe90fde7ac29ffdb51828008e87af886bd1467b41f52
-  bytes covered    429579   (the whole file)
-  chain root       c80812cc10193a5f3becba9aa34632728477229907aad3168b01a365c99e69af
-  commit objects   124, recomputed and matching
+  digest           725335d11bece060f2a447a650ffe378e73c71b8b800819ce9aacd928f7ac55f
+  bytes covered    360503   (the whole file)
+  chain root       816c3a4122cef214366550c064dd72dd19be167649a6fbbbc9ddd4d9d9dc2ab2
+  commit objects   102, recomputed and matching
   key fingerprint  72e91be823e5e1d669a3510ce1d7cf6648325d3d8cea83f7362d42ead37ff1be
 ```
 
