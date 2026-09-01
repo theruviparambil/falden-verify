@@ -18,6 +18,13 @@ Whether the measurements are correct. Whether collection was complete. Whether a
 
 Falden supplies a record and issues no opinion. A verified seal means the document in front of you is the document that was sealed. It is not an assurance conclusion, and nothing here should be read as one.
 
+## A real pack to try it on
+
+[`example/`](example/) holds a genuine sealed pack from a real assessment, with its
+signature, its timestamp token, and the public key. Verify it, then edit one number in
+it and watch the check fail. That takes about two minutes and is more convincing than
+anything written here.
+
 ## Install
 
 ```

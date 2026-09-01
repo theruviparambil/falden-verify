@@ -1,0 +1,13 @@
+# Falden collector seal — Ed25519 verification (public) key.
+#
+# Generated in a ceremony on 27 August 2026 on the founder's machine.
+# The private half is held at ~/.falden/ and has never entered this tree, git,
+# Vercel, GitHub Actions, or any served HTML. See ~/Documents/falden/keys/CEREMONY.md.
+#
+# Fingerprint (SHA-256 of the DER public key):
+#   72e91be823e5e1d669a3510ce1d7cf6648325d3d8cea83f7362d42ead37ff1be
+#
+# PEM so a customer's auditor can verify a pack with stock openssl, not with ours.
+-----BEGIN PUBLIC KEY-----
+MCowBQYDK2VwAyEAP2pgO9nS4EPrN7SWEREdzJPTQkx+kdgkBe0v96FnUbc=
+-----END PUBLIC KEY-----
