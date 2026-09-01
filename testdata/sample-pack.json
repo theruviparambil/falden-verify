@@ -1,0 +1,52 @@
+{
+  "kind": "falden.evidence_pack",
+  "version": 2,
+  "generated_at": "2026-09-01T00:00:00Z",
+  "forge": "github",
+  "window_days": 90,
+  "coverage": {
+    "pull_requests": 5,
+    "commits": 5,
+    "attribution_co_authored_by": 3,
+    "attribution_no_signal": 2,
+    "independence_independent": 1,
+    "independence_no_approval": 4,
+    "large_machine_attributed_without_independent_approval": 2
+  },
+  "chain": {
+    "links": [
+      {
+        "seq": 1,
+        "object_id": "23853a1090627f2c4b1e8d9a3f5c7e2b6d4a8c10",
+        "prev": "0000000000000000000000000000000000000000000000000000000000000000",
+        "hash": "df6a33eaff1c98e9d2a6a84cbeb0c55750d7376c6303290482566b8dcde5e2c6"
+      },
+      {
+        "seq": 2,
+        "object_id": "6c194db2159938f0a7c5e2d1b8437f6a9e0c3d45",
+        "prev": "df6a33eaff1c98e9d2a6a84cbeb0c55750d7376c6303290482566b8dcde5e2c6",
+        "hash": "4f42f61f73aeac249f7931c561025e9e499ec63206ac12f22e9f2250e43661a2"
+      },
+      {
+        "seq": 3,
+        "object_id": "0e979dd625a2b71c4f8e3a06d95271bc8e4f0a3d",
+        "prev": "4f42f61f73aeac249f7931c561025e9e499ec63206ac12f22e9f2250e43661a2",
+        "hash": "a7ae774fc66ebcdda5809ec09f6c37c28f332780b6c300d7f4f5883c87b2f56f"
+      },
+      {
+        "seq": 4,
+        "object_id": "215e556762243a9d0c7f1e85b34926ad5f8c1e07",
+        "prev": "a7ae774fc66ebcdda5809ec09f6c37c28f332780b6c300d7f4f5883c87b2f56f",
+        "hash": "a252a7eec1c461a24b88b8bfe2383797680986b6a7b52b8982a48e503bd5e7e7"
+      },
+      {
+        "seq": 5,
+        "object_id": "32443a6db4569e1f7c02a8d356b41e9f0d27c5a8",
+        "prev": "a252a7eec1c461a24b88b8bfe2383797680986b6a7b52b8982a48e503bd5e7e7",
+        "hash": "f54ab9aa65cb188c1dcfb3393c10a4fa4b370621219e76706b1f20d996ae1250"
+      }
+    ],
+    "root": "f54ab9aa65cb188c1dcfb3393c10a4fa4b370621219e76706b1f20d996ae1250"
+  },
+  "verify_key_fingerprint": "89bb2377bcb17c55733ec1b71a4ae685f45b3d4df0a7832ad87853c7a0e6bc8a"
+}
