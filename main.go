@@ -108,7 +108,7 @@ func main() {
 	fmt.Printf("\n")
 	fmt.Printf("It says nothing about whether the measurements are correct, whether the\n")
 	fmt.Printf("collection was complete, or whether any control is deficient. Falden is\n")
-	fmt.Printf("not the attestor and issues no opinion. Those judgements are yours.\n")
+	fmt.Printf("not the attestor and issues no opinion. Those judgments are yours.\n")
 }
 
 func die(quiet bool, format string, a ...any) {

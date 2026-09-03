@@ -120,6 +120,6 @@ go test ./...
 
 The fixture in `testdata/` is a real pack signed by a real key. The private half of that key was destroyed after the fixture was generated, so nothing in this repository can produce a new signature. That is the correct set of capabilities for a verifier to have.
 
-## Licence
+## License
 
 MIT. See [LICENSE](LICENSE).
