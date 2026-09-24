@@ -66,7 +66,7 @@ Every step is reproducible with stock `openssl`. If you would rather not run a b
 ```sh
 digest=$(openssl dgst -sha256 -r pack.json | cut -d' ' -f1)
 printf 'falden-pack-ed25519-v1\n%s\n' "$digest" > message.bin
-openssl pkeyutl -verify -pubin -inkey falden.pub -rawin -in message.bin -sigfile pack.sig
+openssl pkeyutl -verify -pubin -inkey falden.pub -rawin -in message.bin -sigfile pack.json.sig
 ```
 
 That checks the seal. The chain is a loop over SHA-256, specified below, and reimplementing it in whatever language you prefer is a reasonable afternoon.
