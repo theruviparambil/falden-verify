@@ -1,6 +1,6 @@
 # A real sealed pack
 
-This is a genuine Falden evidence pack, not a mock-up. It was produced on 1 September 2026 against a real GitHub organization, sealed with Falden's production signing key, and timestamped by an independent authority. Everything in this directory is what a customer receives.
+This is a genuine Falden evidence pack, not a mock-up. It was produced on 1 September 2026 against a real repository, the founder's own, sealed with Falden's signing key, and timestamped by an independent authority. Everything in this directory is what that run produced. Falden is a working prototype and this pack is not from a customer engagement.
 
 Check it yourself. That is the entire point of publishing it.
 
@@ -83,7 +83,7 @@ print('paths that could read source:', len(bad))
 "
 ```
 
-Falden claims not to read customer source code. GitHub cannot enforce that claim, because the Pull requests read permission is on its own sufficient to fetch a diff. So the claim is recorded instead of asserted: here is every request that was made, sealed along with everything else. Grep it.
+Falden does not request the Contents permission, and the collector never calls the files endpoint. GitHub cannot enforce the second half of that, because the Pull requests read permission is on its own sufficient to fetch a diff. So it is recorded instead of asserted: here is every request that was made, sealed along with everything else. Grep it.
 
 **The pseudonyms.** People appear as `p_` labels. The salt that resolves them is not here and never leaves the customer's organization. Machine accounts stay legible, because a bot is not a person and which agent wrote a change is the finding.
 
