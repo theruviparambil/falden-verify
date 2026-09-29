@@ -2,7 +2,7 @@
 
 Offline verification of a Falden evidence pack.
 
-An evidence pack is a record of merged software changes: for each one, what wrote it, who approved it, and whether that approver was independent of anyone who authored it. It is produced by [Falden](https://falden.ai) and consumed by the customer's auditors and second line.
+An evidence pack is a record of merged software changes: for each one, what wrote it, who approved it, and whether that approver was someone other than the person who opened it and anyone who authored a commit in it. It is produced by [Falden](https://falden.ai) and consumed by the customer's auditors and second line.
 
 This program checks that a pack is what it claims to be. It is published separately from the collector that produces packs, because a verifier supplied only as part of the thing it verifies is not independent evidence of anything. An auditor using Falden's black box to check Falden's own signature is running in a circle.
 
