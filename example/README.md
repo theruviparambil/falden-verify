@@ -1,5 +1,7 @@
 # A real sealed pack
 
+> **Not an engineer? Read this and stop.** This is the kind of record Falden would give a bank's auditor, made on September 1, 2026 from the founder's own code. Falden is a working prototype with no customers yet. The record lists each merged change, who approved it, and any sign that AI helped write it. Falden signed it and an outside service, FreeTSA, timestamped it, so anyone can check offline that nothing has changed since. It does not prove the numbers are right or that any review process failed.
+
 This is a genuine Falden evidence pack, not a mock-up. It was produced on 1 September 2026 against a real repository, the founder's own, sealed with Falden's signing key, and timestamped by an independent authority. The pack, its signature and its timestamp token are what that run produced; the key and FreeTSA's certificates are here so the checks run offline. Falden is a working prototype and this pack is not from a customer engagement.
 
 Check it yourself. That is the entire point of publishing it.
@@ -14,11 +16,13 @@ Check it yourself. That is the entire point of publishing it.
 
 ## Check the seal
 
+With Go 1.24 or later:
+
 ```
 go run .. -key falden.pub pack.json
 ```
 
-Or without running anything of ours:
+Or without running anything of ours, with OpenSSL 3 (macOS ships LibreSSL, which cannot do this step; `brew install openssl` and use that one):
 
 ```sh
 digest=$(openssl dgst -sha256 -r pack.json | cut -d' ' -f1)
@@ -30,10 +34,12 @@ Both print success. Now break it:
 
 ```sh
 sed 's/"pull_requests": 58/"pull_requests": 0/' pack.json > tampered.json
-openssl dgst -sha256 -r tampered.json | cut -d' ' -f1
+digest=$(openssl dgst -sha256 -r tampered.json | cut -d' ' -f1)
+printf 'falden-pack-ed25519-v1\n%s\n' "$digest" > message.bin
+openssl pkeyutl -verify -pubin -inkey falden.pub -rawin -in message.bin -sigfile pack.json.sig
 ```
 
-Rerun the check against `tampered.json` and it fails. One edited number anywhere in the file breaks the signature, which is the property that makes the document worth anything.
+It fails: `Signature Verification Failure`. With the Go verifier, copy the signature beside the edited file first (`cp pack.json.sig tampered.json.sig`, then `go run .. -key falden.pub tampered.json`) and it prints `FAILED: the pack does not match its signature`. One edited number anywhere in the file breaks the signature, which is the property that makes the document worth anything.
 
 ## Check the time
 
@@ -42,7 +48,7 @@ openssl ts -verify -data pack.json -in pack.json.tsr \
   -CAfile freetsa-cacert.pem -untrusted freetsa-tsa.crt
 ```
 
-That assertion is not Falden's. It comes from a timestamp authority in Germany that has never heard of us, which is the point: every other guarantee in this pack traces back to one private key held by one person, and a claim about time signed with that same key would be worth exactly that person's word.
+That assertion is not Falden's. It comes from a timestamp authority in Germany that has never heard of us, which is the point: every other guarantee in this pack traces back to Falden's own key, and a claim about time signed with that same key would be worth exactly Falden's word.
 
 ```sh
 openssl ts -reply -in pack.json.tsr -text | grep "Time stamp"

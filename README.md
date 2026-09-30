@@ -2,7 +2,7 @@
 
 Offline verification of a Falden evidence pack.
 
-An evidence pack is a record of merged software changes: for each one, what wrote it, who approved it, and whether that approver was someone other than the person who opened it and anyone who authored a commit in it. It is produced by [Falden](https://falden.ai) and consumed by the customer's auditors and second line.
+An evidence pack is a record of merged software changes: for each one, what wrote it, who approved it, and whether that approver was someone other than the person who opened it and anyone who authored a commit in it. It is produced by [Falden](https://falden.ai) and meant for the auditors and second line of the organization it describes.
 
 This program checks that a pack is what it claims to be. It is published separately from the collector that produces packs, because a verifier supplied only as part of the thing it verifies is not independent evidence of anything. An auditor using Falden's black box to check Falden's own signature is running in a circle.
 
@@ -20,7 +20,7 @@ Falden supplies a record and issues no opinion. A verified seal means the docume
 
 ## A real pack to try it on
 
-[`example/`](example/) holds a genuine sealed pack from a real assessment, with its
+[`example/`](example/) holds a genuine sealed pack from the founder's own repository, with its
 signature, its timestamp token, and the public key. Verify it, then edit one number in
 it and watch the check fail. That takes about two minutes and is more convincing than
 anything written here.
